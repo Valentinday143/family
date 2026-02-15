@@ -29,10 +29,10 @@ function growNo(){
 window.onload = function(){
   document.getElementById("yes2").style.pointerEvents = "none";
 };
-
-function saveAndNext(){
+async function saveAndNext(){
 
   let submission = {
+    website: "Family Website ❤️",
     date: new Date().toLocaleString(),
     daughter: daughterAnswer,
     expectation: document.getElementById("q1").value,
@@ -41,15 +41,26 @@ function saveAndNext(){
     loveCompare: loveAnswer
   };
 
-  // Get old submissions
-  let allSubmissions = JSON.parse(localStorage.getItem("familyAnswers")) || [];
+  try {
 
-  // Add new one
-  allSubmissions.push(submission);
+    const response = await fetch("https://formspree.io/f/xwvnoypy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(submission)
+    });
 
-  // Save back
-  localStorage.setItem("familyAnswers", JSON.stringify(allSubmissions));
+    if(response.ok){
+      alert("Submitted successfully 💌");
+      location = "result.html";
+    } else {
+      alert("Submission failed 😢");
+    }
 
-  location = "result.html";
+  } catch(error){
+    alert("Error sending form ❌");
+  }
 }
+
 
