@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel 🔒</title>
+  <style>
+    body{
+      font-family:cursive;
+      background:#111;
+      color:white;
+      padding:20px;
+    }
+    .card{
+      background:#222;
+      padding:15px;
+      margin:15px 0;
+      border-radius:15px;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+let pass = prompt("Enter Secret PIN:");
+
+if(pass === "ammu123"){
+
+  let data = JSON.parse(localStorage.getItem("familyAnswers")) || [];
+
+  if(data.length === 0){
+    document.body.innerHTML = "<h2>No submissions yet 💔</h2>";
+  } else {
+
+    let content = "<h2>All Submitted Answers 💌</h2>";
+
+    data.forEach((item, index) => {
+
+      content += `
+      <div class="card">
+        <b>Submission ${index + 1}</b><br><br>
+        <b>Date:</b> ${item.date}<br><br>
+        <b>Am I your own daughter?</b><br>${item.daughter}<br><br>
+        <b>Did you expect me as boy?</b><br>${item.expectation}<br><br>
+        <b>Are you happy about me?</b><br>${item.happiness}<br><br>
+        <b>Future Plan?</b><br>${item.future}<br><br>
+        <b>Love comparison:</b><br>${item.loveCompare}
+      </div>
+      `;
+    });
+
+    document.body.innerHTML = content;
+  }
+
+} else {
+  document.body.innerHTML = "<h2>Access Denied ❌</h2>";
+}
+</script>
+
+
+</body>
+</html>

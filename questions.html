@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family Questions ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<div class="hearts"></div>
+
+<h2 class="typing">Answer Honestly 💖</h2>
+
+<p>Am I your own daughter?</p>
+<button id="yes1" onclick="selectDaughter('YES', this)">YES</button>
+<button id="no1" onclick="selectDaughter('NO', this)">NO</button>
+
+
+<textarea id="q1" placeholder="Did you expect me as a boy while I was born? Honest answer"></textarea>
+<textarea id="q2" placeholder="Are you happy about me till now?"></textarea>
+<textarea id="q3" placeholder="Did you have any plan for my future?"></textarea>
+
+<p>Do you love me more or my brother?</p>
+
+<button id="yes2" onmouseover="growNo()" ontouchstart="growNo()">
+
+  YES (Me)
+</button>
+<button id="no2" onclick="selectLove('NO (Brother)', this)">
+  NO (Brother)
+</button>
+
+
+<button id="submit" class="hidden" onclick="saveAndNext()">Submit ❤️</button>
+
+<script src="family.js"></script>
+</body>
+</html>

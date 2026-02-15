@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family Login ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<div class="hearts"></div>
+
+<div class="box">
+  <h2 class="typing">What’s my calling name?</h2>
+  <input id="callname" placeholder="Type here">
+  <button onclick="login()">Enter</button>
+  <p id="msg"></p>
+</div>
+
+<script>
+function login(){
+  if(document.getElementById("callname").value.toLowerCase() === "ammu"){
+    location = "questions.html";
+  } else {
+    document.getElementById("msg").innerText = "Unexpected 😶";
+  }
+}
+</script>
+
+</body>
+</html>

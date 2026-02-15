@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: cursive;
+  text-align: center;
+  color: white;
+}
+
+.bg {
+  background: url("heart.gif"), linear-gradient(#ff9a9e, #fad0c4);
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.box {
+  background: rgba(0,0,0,0.55);
+  padding: 25px;
+  width: 90%;
+  max-width: 340px;
+  margin: auto;
+  margin-top: 20%;
+  border-radius: 20px;
+}
+
+button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: hotpink;
+  color: white;
+  font-size: 18px;
+  margin: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Click press effect */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px white;
+}
+
+/* Selected state */
+.selected {
+  background: deeppink;
+  box-shadow: 0 0 20px white;
+}
+
+
+textarea {
+  width: 85%;
+  height: 70px;
+  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  padding: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.typing {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(40,end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.hearts::before {
+  content: "❤️ 💕 💖 💗 💞";
+  position: absolute;
+  width: 100%;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100%); }
+  to { transform: translateY(-100%); }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 20px;
+  animation: fade 8s infinite;
+  transition: transform 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  30% {opacity: 1;}
+  70% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+
+@keyframes fade {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+.slideshow {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: auto;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.signature {
+  margin-top: 20px;
+  font-style: italic;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px pink; }
+  to { text-shadow: 0 0 20px red; }
+}

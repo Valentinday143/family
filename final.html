@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Family ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+<audio id="bgMusic" autoplay loop>
+  <source src="bgmusic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+music.volume = 0;
+let vol = 0;
+let fade = setInterval(() => {
+  if(vol < 0.3){
+    vol += 0.02;
+    music.volume = vol;
+  } else {
+    clearInterval(fade);
+  }
+}, 300);
+</script>
+
+
+<script>
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.3;   // soft polite volume
+</script>
+
+<div class="hearts"></div>
+
+<h1 class="typing">
+  Amma & Appa,  
+  Whatever it is…  
+  I know I am always your Ammu ❤️
+</h1>
+<div class="slideshow">
+  <img src="family1.jpg" class="slide active">
+  <img src="family2.jpg" class="slide">
+  <img src="family3.jpg" class="slide">
+  <img src="family4.jpg" class="slide">
+  <img src="family5.jpg" class="slide">
+  <img src="family6.jpg" class="slide">
+  <img src="family7.jpg" class="slide">
+  <img src="family8.jpg" class="slide">
+  <img src="family9.jpg" class="slide">
+  <img src="family10.jpg" class="slide">
+  <img src="family11.jpg" class="slide">
+
+</div>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 4000);
+</script>
+
+<h3 class="signature">
+  From your daughter, Ammu ❤️
+</h3>
+
+</body>
+</html>

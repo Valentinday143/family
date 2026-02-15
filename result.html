@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I Know 😤</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<div class="hearts"></div>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="bgmusic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+music.volume = 0;
+let vol = 0;
+let fade = setInterval(() => {
+  if(vol < 0.3){
+    vol += 0.02;
+    music.volume = vol;
+  } else {
+    clearInterval(fade);
+  }
+}, 300);
+</script>
+
+
+<script>
+  document.getElementById("bgMusic").volume = 0.3;
+</script>
+
+<div class="box">
+  <h2 class="typing">
+    I know you love my brother more than me 😤  
+    That's why you clicked NO…
+  </h2>
+
+  <p style="margin-top:15px;">
+    But it's okay… I will always compete for your love ❤️
+  </p>
+
+  <button onclick="location='final.html'">
+    Next ❤️
+  </button>
+</div>
+
+</body>
+</html>
